@@ -3,6 +3,7 @@ package POM;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,6 +12,7 @@ import utilities.Driver;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 import java.util.logging.Logger;
 
 public abstract class AbstractClass {
@@ -52,6 +54,12 @@ public abstract class AbstractClass {
         }
     }
 
+    public void actionsClass(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+        Actions act=new Actions(driver);
+        act.moveToElement(element).pause(2000).perform();
+    }
+
     public void scrollIntoView(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)",element);
     }
@@ -60,4 +68,5 @@ public abstract class AbstractClass {
         wait.until(ExpectedConditions.visibilityOfAllElements(elementList));
         return elementList;
     }
+
 }

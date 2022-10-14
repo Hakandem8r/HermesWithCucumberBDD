@@ -12,7 +12,7 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-public class Stepdefs_HermesRegisterSteps {
+public class _1_Stepdefs_HermesRegisterSteps {
 
     private WebDriver driver;
 
