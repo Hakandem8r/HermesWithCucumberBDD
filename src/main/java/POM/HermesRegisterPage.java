@@ -6,9 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.logging.Logger;
+
 public class HermesRegisterPage extends AbstractClass {
 
     WebDriver driver;
+    private static final Logger LOGGER=Logger.getLogger(AbstractClass.class.getName());
 
     public HermesRegisterPage() {
         driver = Driver.getDriver();
@@ -127,5 +130,7 @@ public class HermesRegisterPage extends AbstractClass {
                 "um deine Registrierung abzuschließen. Anschließend kannst du dich mit " +
                 "deinem Benutzernamen und deinem Passwort anmelden " +
                 "und alle Vorteile für registrierte Benutzer genießen.");
+
+        LOGGER.info("The success alert message is: " + successAlertMessage.getText());
     }
 }

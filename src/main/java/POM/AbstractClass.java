@@ -38,7 +38,7 @@ public abstract class AbstractClass {
     public void Assertion(WebElement actual, String expected){
         wait.until(ExpectedConditions.visibilityOf(actual));
         Assert.assertEquals(actual.getText(), expected);
-        System.out.println("My message: "+ actual.getText());
+       // System.out.println("My message: "+ actual.getText());
     }
 
     public void waitUrlContent(String ... value){
