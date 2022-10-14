@@ -1,5 +1,6 @@
 package steps;
 
+import POM.AbstractClass;
 import POM.HermesRegisterPage;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -43,6 +44,7 @@ public class Stepdefs_HermesRegisterSteps {
 
     @Then("the user should be navigated to register page")
     public void theUserShouldBeNavigatedToRegisterPage() {
+        registerPage.checkIfTheURLContainsKonto();
     }
 
     @Then("choose a titel")

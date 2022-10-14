@@ -11,8 +11,11 @@ import utilities.Driver;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.logging.Logger;
 
 public abstract class AbstractClass {
+
+    private static final Logger LOGGER = Logger.getLogger(AbstractClass.class.getName());
 
     private WebDriver driver= Driver.getDriver();
     WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -36,6 +39,16 @@ public abstract class AbstractClass {
         wait.until(ExpectedConditions.visibilityOf(actual));
         Assert.assertEquals(actual.getText(), expected);
         System.out.println("My message: "+ actual.getText());
+    }
+
+    public void waitUrlContent(String ... value){
+        try {
+            for (String s:value){
+                wait.until(ExpectedConditions.urlContains(s));
+            }
+        }catch (Exception error){
+            error.getMessage();
+        }
     }
 
     public void scrollIntoView(WebElement element) {

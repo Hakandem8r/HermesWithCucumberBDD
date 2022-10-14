@@ -62,6 +62,10 @@ public class HermesRegisterPage extends AbstractClass {
         clickFunction(meinKontoButton);
     }
 
+    public void checkIfTheURLContainsKonto(){
+        waitUrlContent("/konto");
+    }
+
     public void clickOnAcceptCookiesButton(){
         clickFunction(cookiesButton);
     }
