@@ -45,6 +45,7 @@ public abstract class AbstractClass {
         try {
             for (String s:value){
                 wait.until(ExpectedConditions.urlContains(s));
+                System.out.println("My URL contains: " + s);
             }
         }catch (Exception error){
             error.getMessage();

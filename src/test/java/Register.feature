@@ -15,6 +15,7 @@ Feature: Register Test
     And type a street "<street>" and house number "<house number>"
     And type a PLZ "<PLZ>" and place "<place>"
     Then click on register button
+    And assert the success alert message at the end
     Examples:
       | username   | email                | password    | firstname | lastname | street        | house number | PLZ   | place      |  |
       | hakandemir | hakandemir@gmail.com | hakanD12345 | Hakan     | Demir    | Tübinger Str. | 99           | 72760 | Reutlingen | |

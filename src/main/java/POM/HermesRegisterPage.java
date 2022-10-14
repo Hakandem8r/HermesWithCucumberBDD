@@ -57,6 +57,9 @@ public class HermesRegisterPage extends AbstractClass {
     @FindBy(css = ".btn.btn-block.btn-primary")
     private WebElement registerButton;
 
+    @FindBy(css = "[data-element-id='success-alert-message']")
+    private WebElement successAlertMessage;
+
 
     public void clickOnMeinKontoButton(){
         clickFunction(meinKontoButton);
@@ -116,5 +119,13 @@ public class HermesRegisterPage extends AbstractClass {
 
     public void clickOnRegisterButton(){
         clickFunction(registerButton);
+    }
+
+    public void assertSuccessAlertMessageInTheRegisterPage(){
+        Assertion(successAlertMessage,"Du hast eine E-Mail an hakandemir@gmail.com erhalten, " +
+                "in der du einen Bestätigungslink findest. Klicke einfach diesen Link an, " +
+                "um deine Registrierung abzuschließen. Anschließend kannst du dich mit " +
+                "deinem Benutzernamen und deinem Passwort anmelden " +
+                "und alle Vorteile für registrierte Benutzer genießen.");
     }
 }

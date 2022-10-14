@@ -90,6 +90,10 @@ public class Stepdefs_HermesRegisterSteps {
         registerPage.clickOnRegisterButton();
     }
 
+    @And("assert the success alert message at the end")
+    public void assertTheSuccessAlertMessageAtTheEnd() {
+        registerPage.assertSuccessAlertMessageInTheRegisterPage();
+    }
 
     @After
     public void quitDriver(){
@@ -100,6 +104,7 @@ public class Stepdefs_HermesRegisterSteps {
         }
         driver.quit();
     }
+
 
 
 }
